@@ -1,0 +1,47 @@
+{
+  "game": [
+    {
+      "question": "Quanto tempo dura, em média, o orgasmo de um porco?",
+      "answers":[
+        {
+          "id": 1,
+          "answer": "30min"
+        },
+        {
+          "id": 2,
+          "answer": "2min"
+        },
+        {
+          "id": 3,
+          "answer": "15min"
+        },
+        {
+          "id": 4,
+          "answer": "10min"
+        }
+      ]
+    },
+    {
+      "question": "Como é que se inicia o ato sexual nos louva-deus?",
+      "answers":[
+        {
+          "id": 1,
+          "answer": "A fêmea arranca a cabeça ao macho"
+        },
+        {
+          "id": 2,
+          "answer": "É similar aos humanos"
+        },
+        {
+          "id": 3,
+          "answer": "Juntam os corpos e copulam por osmose"
+        },
+        {
+          "id": 4,
+          "answer": "Depois de uma discussão entre ambos"
+        }
+      ]
+    }
+  ]
+
+}

@@ -7,7 +7,7 @@ import { VueComponent } from 'vue-typescript'
 export class HomeComponent extends Vue {
 
     package:string = 'O Jogo';
-    bruno:string = 'Nábais Bobalhão';
+    bruno:string = 'Nábais Boubalhão';
     daniel:string = 'Regino Coeli';
     antonio:string = 'Topê';
 
