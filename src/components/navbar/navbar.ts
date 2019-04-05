@@ -25,7 +25,7 @@ export class Navbar extends Vue {
     links:Link[] = [
         new Link('Home', '/'),
         new Link('About', '/about')
-    ]
+    ];
 
     @Watch('$route.path')
     pathChanged(){
@@ -35,4 +35,4 @@ export class Navbar extends Vue {
     ready(){
         console.log(this.object.default);
     }
-} 
+}
