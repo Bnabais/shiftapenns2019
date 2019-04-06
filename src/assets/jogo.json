@@ -41,6 +41,48 @@
           "answer": "Depois de uma discussão entre ambos"
         }
       ]
+    },
+    {
+      "question": "Quantos litros de esperma liberta uma baleia",
+      "answers":[
+        {
+          "id": 1,
+          "answer": "25"
+        },
+        {
+          "id": 2,
+          "answer": "20"
+        },
+        {
+          "id": 3,
+          "answer": "70"
+        },
+        {
+          "id": 4,
+          "answer": "30"
+        }
+      ]
+    },
+    {
+      "question": "Quantas vezes fomos ao rabo do Nabo",
+      "answers":[
+        {
+          "id": 1,
+          "answer": "TRIIIIINTA!"
+        },
+        {
+          "id": 2,
+          "answer": "Zero"
+        },
+        {
+          "id": 3,
+          "answer": "Duas (por dia)"
+        },
+        {
+          "id": 4,
+          "answer": "DEZ"
+        }
+      ]
     }
   ]
 }

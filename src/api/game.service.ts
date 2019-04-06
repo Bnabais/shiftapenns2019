@@ -1,25 +1,29 @@
 import { GameModel, newGameModel } from '@/api/model/game.model';
-import { emptyQuestionModel, QuestionModel } from '@/api/model/question.model';
+import { QuestionModel } from '@/api/model/question.model';
 import * as data from '../assets/jogo.json';
 
 export class GameService {
   private game: GameModel;
-  private actualQuestion: QuestionModel;
-  private questionIndex: number;
 
   constructor() {
     this.game = newGameModel();
-    this.actualQuestion = emptyQuestionModel();
-    this.questionIndex = 0;
+    //this.questionIndex = 0;
     this.game.questions = <QuestionModel[]>Array.from(data.game);
   }
 
   public getNextQuestion(): QuestionModel {
-    return this.questionIndex <= this.game.questions.length ? this.game.questions[this.questionIndex++] :
-      emptyQuestionModel();
+    const index: number = this.getRandomQuestionIndex();
+    const question: QuestionModel = this.game.questions[index];
+    question.answers.sort(() => Math.random() - 0.5);
+    this.game.questions.splice(index, 1);
+    return question;
   }
 
   public hasMoreQuestions(): boolean {
-    return this.questionIndex <= this.game.questions.length;
+    return this.game.questions.length > 0;
+  }
+
+  private getRandomQuestionIndex(): number {
+    return Math.floor(Math.random() * Math.floor(this.game.questions.length));
   }
 }
