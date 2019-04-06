@@ -1,24 +1,39 @@
-# vue-typescript-seed
-A starter project for [vue-typescript](https://github.com/itsFrank/vue-typescript) using webpack and bootstrap
+# hello-world2
 
-This seed repo comes with all you need to start building a vuejs project using typescript.
+## Project setup
+```
+npm install
+```
 
-Packages included:
-- vue
-- vue-router
-- webpack (and all the loaders and utilities necessary)
-- bootstrap 3
-- jquery 2.2.4
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-Scripts:
+### Compiles and minifies for production
+```
+npm run build
+```
 
-`npm run dev` - will start a local dev server at localhost:8080
+### Run your tests
+```
+npm run test
+```
 
-`npm run build` - will build your project into the /dist folder
+### Lints and fixes files
+```
+npm run lint
+```
 
-`npm run clean` - will delete the dist folder
+### Run your end-to-end tests
+```
+npm run test:e2e
+```
 
-Setup: run `npm install`
+### Run your unit tests
+```
+npm run test:unit
+```
 
-Clone it and get started!
-
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
