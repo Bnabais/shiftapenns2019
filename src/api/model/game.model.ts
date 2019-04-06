@@ -1,11 +1,15 @@
-import { QuestionModel } from '@/api/model/question.model';
+import { emptyLevelModel, LevelModel } from '@/api/model/level.model';
 
 export interface GameModel {
-  questions: QuestionModel[];
+  easy: LevelModel;
+  medium: LevelModel
+  hard: LevelModel;
 }
 
 export const newGameModel: () => GameModel = (): GameModel => {
   return <GameModel>{
-    questions: []
+    easy: emptyLevelModel(),
+    medium: emptyLevelModel(),
+    hard: emptyLevelModel()
   };
 };

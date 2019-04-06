@@ -1,15 +1,16 @@
 import { AnswerModel } from '@/api/model/answer.model';
+import { emptyMediaModel, MediaModel } from '@/api/model/media.model';
 
 export interface QuestionModel {
-  id: number;
   question: string;
   answers: AnswerModel[];
+  media: MediaModel;
 }
 
 export const emptyQuestionModel: () => QuestionModel = (): QuestionModel => {
   return <QuestionModel>{
-    id: -1,
     question: '',
-    answers: []
+    answers: [],
+    media: emptyMediaModel()
   };
 };

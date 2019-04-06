@@ -6,7 +6,7 @@
           <h1 class="question">{{ actualQuestion.question }}</h1>
         </div>
         <div v-for="answer in actualQuestion.answers" class="answers col-md-6">
-          <button v-on:click="handleAnswer(answer.id)" class="btn btn-default answer col-md-6 col-md-offset-3"
+          <button @click="handleAnswer(answer.id)" class="btn btn-default answer col-md-6 col-md-offset-3"
             type="submit">{{ answer.answer }}
           </button>
         </div>
@@ -14,7 +14,7 @@
       <div v-else-if="screenLevel === 'gameOverScreen'" class="content col-md-12">
         <div class="gameover-div col-md-12">
           <h1 class="gameover">GAME OVER</h1>
-          <button v-on:click="handleStartAgain()" class="btn btn-default start col-md-6 col-md-offset-3"
+          <button @click="handleStartAgain()" class="btn btn-default start col-md-6 col-md-offset-3"
             type="submit">Start again!
           </button>
         </div>
