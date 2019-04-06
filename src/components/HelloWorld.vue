@@ -5,13 +5,8 @@
         <div class="question-div col-md-12">
           <h1 class="question">{{ question }}</h1>
         </div>
-        <div class="answers col-md-6">
-          <button v-on:click="answer()" class="btn btn-default answer col-md-6 col-md-offset-3" type="submit">{{ answer_1 }}</button>
-          <button v-on:click="answer()" class="btn btn-default answer col-md-6 col-md-offset-3" type="submit">{{ answer_1 }}</button>
-        </div>
-        <div class="answers col-md-6">
-          <button v-on:click="answer()" class="btn btn-default answer col-md-6 col-md-offset-3" type="submit">{{ answer_1 }}</button>
-          <button v-on:click="answer()" class="btn btn-default answer col-md-6 col-md-offset-3" type="submit">{{ answer_1 }}</button>
+        <div v-for="answer in items" class="answers col-md-6">
+          <button v-on:click="handleAnswer(answer.id)" class="btn btn-default answer col-md-6 col-md-offset-3" type="submit">{{ answer.answer }}</button>
         </div>
       </div>
     </div>
@@ -23,18 +18,35 @@
 
   @Component
   export default class HelloWorld extends Vue {
-    @Prop() private msg!: string;
+    @Prop() private msg!: Array;
     question: string = 'Pergunta?';
     answer_1: string = 'Resposta 1';
+    items: Array = [
+      { answer: 'Topê', id: 1 },
+      { answer: 'Boubalhão', id: 2 },
+      { answer: 'Dany Boy', id: 3 },
+      { answer: 'Outros', id:4 }
+    ];
 
-    constructor() {
-      super();
-      this.test();
+     created(): void {
 
+     }
+
+    hasMoreQuestions() {
+       return true;
     }
 
-    public test(): void {
+    getNextQuestion() {
+       return true;
+    }
 
+    handleAnswer(id): void {
+      console.log(id);
+      if(id === 1) {
+        if(this.hasMoreQuestions()){
+          this.getNextQuestion();
+        }
+      }
     }
   }
 </script>

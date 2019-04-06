@@ -1,6 +1,6 @@
 <template>
   <div class="col-lg-12 home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <HelloWorld />
   </div>
 </template>
 
