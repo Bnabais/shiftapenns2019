@@ -39,22 +39,10 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator';
-  import * as data from '../assets/jogo.json';
 
   @Component
   export default class HelloWorld extends Vue {
     @Prop() private msg!: string;
-    private items: any;
-
-    constructor() {
-      super();
-      this.test();
-    }
-
-    public test(): void {
-      console.log('CARALHO');
-      console.log(data.game);
-    }
   }
 </script>
 
