@@ -3,10 +3,12 @@
     <div class="row">
       <div class="content col-md-12">
         <div class="question-div col-md-12">
-          <h1 class="question">{{ question }}</h1>
+          <h1 class="question">{{ actualQuestion.question }}</h1>
         </div>
-        <div v-for="answer in items" class="answers col-md-6">
-          <button v-on:click="handleAnswer(answer.id)" class="btn btn-default answer col-md-6 col-md-offset-3" type="submit">{{ answer.answer }}</button>
+        <div v-for="answer in actualQuestion.answers" class="answers col-md-6">
+          <button v-on:click="handleAnswer(answer.id)" class="btn btn-default answer col-md-6 col-md-offset-3"
+            type="submit">{{ answer.answer }}
+          </button>
         </div>
       </div>
     </div>
@@ -14,37 +16,29 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from 'vue-property-decorator';
+  import { Component, Vue } from 'vue-property-decorator';
+  import { GameService } from '@/api/game.service';
+  import { emptyQuestionModel, QuestionModel } from '@/api/model/question.model';
 
   @Component
   export default class HelloWorld extends Vue {
-    @Prop() private msg!: Array;
-    question: string = 'Pergunta?';
-    answer_1: string = 'Resposta 1';
-    items: Array = [
-      { answer: 'Topê', id: 1 },
-      { answer: 'Boubalhão', id: 2 },
-      { answer: 'Dany Boy', id: 3 },
-      { answer: 'Outros', id:4 }
-    ];
+    private gameService: GameService;
+    actualQuestion: QuestionModel = emptyQuestionModel();
 
-     created(): void {
-
-     }
-
-    hasMoreQuestions() {
-       return true;
+    constructor() {
+      super();
+      this.gameService = new GameService();
     }
 
-    getNextQuestion() {
-       return true;
+    created(): void {
+      this.actualQuestion = this.gameService.getNextQuestion();
     }
 
-    handleAnswer(id): void {
+    handleAnswer(id: number): void {
       console.log(id);
-      if(id === 1) {
-        if(this.hasMoreQuestions()){
-          this.getNextQuestion();
+      if (id === 1) {
+        if (this.gameService.hasMoreQuestions()) {
+          this.actualQuestion = this.gameService.getNextQuestion();
         }
       }
     }

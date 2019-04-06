@@ -15,15 +15,5 @@
     }
   })
   export default class Home extends Vue {
-
-    created(): void {
-      console.log('Question?', this.getQuestion().question);
-      console.log('Question?', this.getQuestion().question);
-      console.log('Question?', this.getQuestion());
-    }
-
-    constructor() {
-      super();
-    }
   }
 </script>

@@ -20,6 +20,6 @@ export class GameService {
   }
 
   public hasMoreQuestions(): boolean {
-    return this.questionIndex >= this.game.questions.length;
+    return this.questionIndex <= this.game.questions.length;
   }
 }
