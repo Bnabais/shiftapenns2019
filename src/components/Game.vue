@@ -34,7 +34,7 @@
     private gameService: GameService;
     actualQuestion: QuestionModel = emptyQuestionModel();
     screenLevel: ScreenLevel;
-    gameOver: string = 'game over'
+    gameOver: string = 'game over';
 
     constructor() {
       super();
@@ -85,45 +85,50 @@
     color: #42b983;
   }
 
-  .content {
-    text-align: center;
-    padding: 15px;
-    height: 400px;
+  .container {
+    margin-top: 50px;
 
-    .question-div {
-      .question {
-        color: white;
-      }
-    }
 
-    .gameover-div {
-      .gameover {
-        color: orange;
+    .content {
+      text-align: center;
+      padding: 15px;
+      height: 400px;
+
+      .question-div {
+        .question {
+          color: white;
+        }
       }
 
-      .start-again {
-        height: 50px;
-        margin-top: 50px;
-        outline: none;
-      }
-    }
+      .gameover-div {
+        .gameover {
+          color: orange;
+        }
 
-    .answers {
-      .answer {
-        margin-top: 50px;
-        outline: none;
-        font-size: 20px;
-        height: 100px;
-        word-wrap: break-word;
-        white-space: normal;
+        .start-again {
+          height: 50px;
+          margin-top: 50px;
+          outline: none;
+        }
       }
-      @media (max-width: 992px) {
+
+      .answers {
         .answer {
-          width: 100%;
-          height: 75px;
+          margin-top: 50px;
+          outline: none;
+          font-size: 20px;
+          height: 100px;
+          word-wrap: break-word;
+          white-space: normal;
+        }
+        @media (max-width: 992px) {
+          .answer {
+            width: 100%;
+            height: 75px;
+          }
         }
       }
     }
-  }
 
+  }
 </style>
