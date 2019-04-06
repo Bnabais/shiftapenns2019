@@ -17,7 +17,7 @@
     components: {
       NavBar,
       Game
-    }
+    },
   })
   export default class Home extends Vue {
   }

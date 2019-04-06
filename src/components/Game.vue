@@ -3,12 +3,18 @@
     <div class="row">
       <div v-if="screenLevel === 'questionsScreen'" class="content col-md-12">
         <div class="question-div col-md-12">
+          <h1 class="points-wrapper">Score: <span class="points">{{ getPlayersPoints() }}</span></h1>
           <h1 class="question">{{ actualQuestion.question }}</h1>
         </div>
-        <div v-for="answer in actualQuestion.answers" class="answers col-md-6 col-xs-12">
-          <button v-on:click="handleAnswer(answer.id)" class="btn btn-warning answer col-md-6 col-md-offset-3"
-            type="submit">{{ answer.answer }}
-          </button>
+        <div class="answers-wrapper col-xs-12">
+          <div v-for="answer in actualQuestion.answers" class="answers col-md-6 col-xs-12">
+            <button
+                v-on:click="handleAnswer(answer.id)"
+                class="btn btn-warning answer col-md-6"
+                type="submit">
+              {{ answer.answer }}
+            </button>
+          </div>
         </div>
       </div>
       <div v-else-if="screenLevel === 'gameOverScreen'" class="content col-md-12">
@@ -62,6 +68,10 @@
       this.gameService.restartGame();
       this.actualQuestion = this.gameService.getNextQuestion();
     }
+
+    getPlayersPoints(): number {
+      return this.gameService.getPoints();
+    }
   }
 </script>
 
@@ -85,9 +95,17 @@
     color: #42b983;
   }
 
-  .container {
-    margin-top: 50px;
+  .points-wrapper {
+    margin-bottom: 40px;
+  }
 
+  .points {
+    color: red;
+  }
+
+  .container {
+    width: 100%;
+    margin-top: 50px;
 
     .content {
       text-align: center;
@@ -112,20 +130,34 @@
         }
       }
 
+      .answers-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       .answers {
-        .answer {
-          margin-top: 50px;
-          outline: none;
-          font-size: 20px;
-          height: 100px;
-          word-wrap: break-word;
-          white-space: normal;
+        text-align: center;
+      }
+
+      .answer {
+        width: 80%;
+        height: 70px;
+        left: 10%;
+        margin-top: 50px;
+        outline: none;
+        font-size: 20px;
+        color: black;
+        word-wrap: break-word;
+        white-space: normal;
+
+        &:hover {
+          color: white;
+          background-color: blue;
+          border-color: white;
         }
+
         @media (max-width: 992px) {
-          .answer {
-            width: 100%;
-            height: 75px;
-          }
+          left: 0;
         }
       }
     }
