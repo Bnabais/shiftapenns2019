@@ -7,8 +7,7 @@ export class GameService {
 
   constructor() {
     this.game = newGameModel();
-    //this.questionIndex = 0;
-    this.game.questions = <QuestionModel[]>Array.from(data.game);
+    this.loadQuestionsFromJson();
   }
 
   public getNextQuestion(): QuestionModel {
@@ -23,7 +22,15 @@ export class GameService {
     return this.game.questions.length > 0;
   }
 
+  public restartGame(): void {
+    this.loadQuestionsFromJson();
+  }
+
   private getRandomQuestionIndex(): number {
     return Math.floor(Math.random() * Math.floor(this.game.questions.length));
+  }
+
+  private loadQuestionsFromJson(): void {
+    this.game.questions = <QuestionModel[]>Array.from(data.game);
   }
 }

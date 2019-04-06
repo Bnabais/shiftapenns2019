@@ -15,7 +15,7 @@
         <div class="gameover-div col-md-12">
           <h1 class="gameover">GAME OVER</h1>
           <button v-on:click="handleStartAgain()" class="btn btn-default start col-md-6 col-md-offset-3"
-                  type="submit">Start again!
+            type="submit">Start again!
           </button>
         </div>
       </div>
@@ -47,19 +47,19 @@
     }
 
     handleAnswer(id: number): void {
-      console.log(id);
       if (id === 1) {
         if (this.gameService.hasMoreQuestions()) {
           this.actualQuestion = this.gameService.getNextQuestion();
         }
       } else {
         this.screenLevel = ScreenLevel.GAMEOVER_SCREEN;
-        console.log(this.screenLevel);
       }
     }
 
     handleStartAgain(): void {
       this.screenLevel = ScreenLevel.QUESTIONS_SCREEN;
+      this.gameService.restartGame();
+      this.actualQuestion = this.gameService.getNextQuestion();
     }
   }
 </script>
