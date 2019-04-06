@@ -5,16 +5,16 @@
         <div class="question-div col-md-12">
           <h1 class="question">{{ actualQuestion.question }}</h1>
         </div>
-        <div v-for="answer in actualQuestion.answers" class="answers col-md-6">
-          <button v-on:click="handleAnswer(answer.id)" class="btn btn-default answer col-md-6 col-md-offset-3"
+        <div v-for="answer in actualQuestion.answers" class="answers col-md-6 col-xs-12">
+          <button v-on:click="handleAnswer(answer.id)" class="btn btn-warning answer col-md-6 col-md-offset-3"
             type="submit">{{ answer.answer }}
           </button>
         </div>
       </div>
       <div v-else-if="screenLevel === 'gameOverScreen'" class="content col-md-12">
         <div class="gameover-div col-md-12">
-          <h1 class="gameover">GAME OVER</h1>
-          <button v-on:click="handleStartAgain()" class="btn btn-default start col-md-6 col-md-offset-3"
+          <h1 class="text-uppercase gameover">{{ gameOver }}</h1>
+          <button v-on:click="handleStartAgain()" class="btn btn-warning start-again col-xs-6 col-xs-offset-3"
             type="submit">Start again!
           </button>
         </div>
@@ -34,6 +34,7 @@
     private gameService: GameService;
     actualQuestion: QuestionModel = emptyQuestionModel();
     screenLevel: ScreenLevel;
+    gameOver: string = 'game over'
 
     constructor() {
       super();
@@ -97,7 +98,13 @@
 
     .gameover-div {
       .gameover {
-        color: red;
+        color: orange;
+      }
+
+      .start-again {
+        height: 50px;
+        margin-top: 50px;
+        outline: none;
       }
     }
 
@@ -105,12 +112,17 @@
       .answer {
         margin-top: 50px;
         outline: none;
+        font-size: 20px;
+        height: 100px;
+        word-wrap: break-word;
+        white-space: normal;
       }
-    }
-
-    .start {
-      margin-top: 50px;
-      outline: none;
+      @media (max-width: 992px) {
+        .answer {
+          width: 100%;
+          height: 75px;
+        }
+      }
     }
   }
 
