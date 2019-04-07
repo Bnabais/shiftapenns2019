@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div v-if="isToShowAnimation === true" class="animation">
+      <img class="gif" :src=gif />
+    </div>
     <div class="row">
       <div v-if="screenLevel === 'questionsScreen'" class="content col-md-12">
         <div class="question-div col-md-12">
@@ -41,6 +44,9 @@
     actualQuestion: QuestionModel = emptyQuestionModel();
     screenLevel: ScreenLevel;
     gameOver: string = 'game over';
+    gif: string = '';
+    isToShowAnimation: boolean = false;
+    timeOut: any = undefined;
 
     constructor() {
       super();
@@ -54,13 +60,26 @@
     }
 
     handleAnswer(id: number): void {
-      if (this.gameService.isCorrectAnswer(id)) {
-        if (this.gameService.hasMoreQuestions()) {
-          this.actualQuestion = this.gameService.getNextQuestion();
-        }
-      } else {
+        if (this.gameService.isCorrectAnswer(id)) {
+          this.animationForCorrectAnswer();
+          this.timeOut = setTimeout(() => {
+            this.isToShowAnimation = false;
+            this.gif = '';
+
+            if (this.gameService.hasMoreQuestions()) {
+              this.actualQuestion = this.gameService.getNextQuestion();
+            }
+          }, 3000);
+        } else {
         this.screenLevel = ScreenLevel.GAMEOVER_SCREEN;
       }
+    }
+
+    animationForCorrectAnswer(): void {
+        let audio = new Audio(require(`../assets/${this.actualQuestion.media.audio}`));
+        this.gif = this.actualQuestion.media.gif;
+        this.isToShowAnimation = true;
+        audio.play();
     }
 
     handleStartAgain(): void {
@@ -93,6 +112,21 @@
 
   a {
     color: #42b983;
+  }
+
+  .animation {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .gif {
+      width: 60%;
+    }
   }
 
   .points-wrapper {

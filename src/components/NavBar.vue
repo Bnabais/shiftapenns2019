@@ -13,7 +13,6 @@
   export default class NavBar extends Vue {
     constructor() {
       super();
-      console.log('ENTREI');
     }
   }
 </script>
