@@ -54,7 +54,7 @@
     }
 
     handleAnswer(id: number): void {
-      if (id === 1) {
+      if (this.gameService.isCorrectAnswer(id)) {
         if (this.gameService.hasMoreQuestions()) {
           this.actualQuestion = this.gameService.getNextQuestion();
         }

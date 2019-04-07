@@ -1,5 +1,5 @@
 import { GameModel, newGameModel } from '@/api/model/game.model';
-import { emptyQuestionModel, QuestionModel } from '@/api/model/question.model';
+import { QuestionModel } from '@/api/model/question.model';
 import * as data from '../assets/jogo.json';
 
 export type LevelType =
@@ -10,32 +10,20 @@ export type LevelType =
 export class GameService {
   private game: GameModel;
   private points: number;
-  private isFirstQuestion: boolean;
+  private actualQuestionType: LevelType;
 
   constructor() {
     this.game = newGameModel();
     this.points = 0;
-    this.isFirstQuestion = true;
+    this.actualQuestionType = 'easy';
     this.loadQuestionsFromJson();
   }
 
   public getNextQuestion(): QuestionModel {
-    let question: QuestionModel = emptyQuestionModel();
-
-    if (this.game.easy.questions.length) {
-      this.points += this.isFirstQuestion ? 0 : this.game.easy.points;
-      question = this.getEasyQuestion();
-    } else if (this.game.medium.questions.length) {
-      this.points += this.isFirstQuestion ? 0 : this.game.medium.points;
-      question = this.getMediumQuestion();
-    } else if (this.game.hard.questions.length) {
-      this.points += this.isFirstQuestion ? 0 : this.game.hard.points;
-      question = this.getHardQuestion();
-    }
-
-    //ALTERAR PONTOS
-    this.isFirstQuestion = false;
-    return question;
+    const level: LevelType = this.game.easy.questions.length ? 'easy' :
+      this.game.medium.questions.length ? 'medium' : 'hard';
+    this.actualQuestionType = level;
+    return this.getQuestion(level);
   }
 
   public hasMoreQuestions(): boolean {
@@ -45,12 +33,20 @@ export class GameService {
 
   public restartGame(): void {
     this.points = 0;
-    this.isFirstQuestion = true;
     this.loadQuestionsFromJson();
   }
 
   public getPoints(): number {
     return this.points;
+  }
+
+  public isCorrectAnswer(id: number) {
+    if (id === 1) {
+      this.points += this.getLevelPoints();
+      return true;
+    } else {
+      return false;
+    }
   }
 
   private getRandomQuestionIndex(level: LevelType): number {
@@ -65,28 +61,26 @@ export class GameService {
     return 0;
   }
 
-  private getEasyQuestion(): QuestionModel {
-    const index = this.getRandomQuestionIndex('easy');
-    const question: QuestionModel = this.game.easy.questions[index];
+  private getQuestion(level: LevelType): QuestionModel {
+    const index = this.getRandomQuestionIndex(level);
+    const question: QuestionModel = this.game[level].questions[index];
     question.answers.sort(() => Math.random() - 0.5);
-    this.game.easy.questions.splice(index, 1);
+    this.game[level].questions.splice(index, 1);
+    this.actualQuestionType = level;
     return question;
   }
 
-  private getMediumQuestion(): QuestionModel {
-    const index = this.getRandomQuestionIndex('medium');
-    const question: QuestionModel = this.game.medium.questions[index];
-    question.answers.sort(() => Math.random() - 0.5);
-    this.game.medium.questions.splice(index, 1);
-    return question;
-  }
-
-  private getHardQuestion(): QuestionModel {
-    const index = this.getRandomQuestionIndex('hard');
-    const question: QuestionModel = this.game.hard.questions[index];
-    question.answers.sort(() => Math.random() - 0.5);
-    this.game.hard.questions.splice(index, 1);
-    return question;
+  private getLevelPoints(): number {
+    switch (this.actualQuestionType) {
+      case 'easy':
+        return this.game.easy.points;
+      case 'medium':
+        return this.game.medium.points;
+      case 'hard':
+        return this.game.hard.points;
+      default:
+        return 0;
+    }
   }
 
   private loadQuestionsFromJson(): void {
