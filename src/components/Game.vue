@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div v-if="isToShowAnimation === true" class="animation">
-      <img class="gif" :src=gif />
+      <img class="img-responsive gif" alt="Responsive image" :src=gif />
     </div>
     <div class="row">
       <div v-if="screenLevel === 'questionsScreen'" class="content col-md-12">
@@ -121,6 +121,7 @@
 
   .animation {
     width: 100%;
+    height: 100%;
     position: absolute;
     z-index: 1;
     margin: 0;
@@ -130,7 +131,8 @@
     align-items: center;
 
     .gif {
-      width: 60%;
+      padding-right: 50px;
+      width: 500px;
     }
   }
 
