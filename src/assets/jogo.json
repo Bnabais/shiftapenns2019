@@ -3,317 +3,301 @@
     "easy": {
       "points": 10,
       "questions": [
-  {
-    "question": "[easy] Quanto tempo dura, em média, o orgasmo de um porco?",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "30min"
-      },
-      {
-        "id": 2,
-        "answer": "2min"
-      },
-      {
-        "id": 3,
-        "answer": "15min"
-      },
-      {
-        "id": 4,
-        "answer": "10min"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[easy] Como é que se inicia o ato sexual nos louva-deus?",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "A fêmea arranca a cabeça ao macho"
-      },
-      {
-        "id": 2,
-        "answer": "É similar aos humanos"
-      },
-      {
-        "id": 3,
-        "answer": "Juntam os corpos e copulam por osmose"
-      },
-      {
-        "id": 4,
-        "answer": "Depois de uma discussão entre ambos"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[easy] Quantos litros de esperma liberta uma baleia",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "25"
-      },
-      {
-        "id": 2,
-        "answer": "20"
-      },
-      {
-        "id": 3,
-        "answer": "70"
-      },
-      {
-        "id": 4,
-        "answer": "30"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[easy] Quantas vezes fomos ao rabo do Nabo",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "TRIIIIINTA!"
-      },
-      {
-        "id": 2,
-        "answer": "Zero"
-      },
-      {
-        "id": 3,
-        "answer": "Duas (por dia)"
-      },
-      {
-        "id": 4,
-        "answer": "DEZ"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  }
-]
+        {
+          "question": "Que animal mata mais pessoas?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Vacas"
+            },
+            {
+              "id": 2,
+              "answer": "Tubarões"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "De que cor é a Coca-Cola se não se adicionar corantes?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Verde"
+            },
+            {
+              "id": 2,
+              "answer": "Azul"
+            },
+            {
+              "id": 3,
+              "answer": "Vermelha"
+            },
+            {
+              "id": 4,
+              "answer": "Branca"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "O que vê um porco a olhar para cima para o céu?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Os porcos não conseguem olhar para cima"
+            },
+            {
+              "id": 2,
+              "answer": "Céu"
+            },
+            {
+              "id": 3,
+              "answer": "Ficam cegos com o sol"
+            },
+            {
+              "id": 4,
+              "answer": "Conseguem ver Marte"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "Qual o animal terrestre mais rápido?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Chita"
+            },
+            {
+              "id": 2,
+              "answer": "Cavalo"
+            },
+            {
+              "id": 3,
+              "answer": "William Carvalho"
+            },
+            {
+              "id": 4,
+              "answer": "Cão"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        }
+      ]
     },
     "medium": {
       "points": 20,
       "questions": [
-  {
-    "question": "[medium] Quanto tempo dura, em média, o orgasmo de um porco?",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "30min"
-      },
-      {
-        "id": 2,
-        "answer": "2min"
-      },
-      {
-        "id": 3,
-        "answer": "15min"
-      },
-      {
-        "id": 4,
-        "answer": "10min"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[medium] Como é que se inicia o ato sexual nos louva-deus?",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "A fêmea arranca a cabeça ao macho"
-      },
-      {
-        "id": 2,
-        "answer": "É similar aos humanos"
-      },
-      {
-        "id": 3,
-        "answer": "Juntam os corpos e copulam por osmose"
-      },
-      {
-        "id": 4,
-        "answer": "Depois de uma discussão entre ambos"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[medium] Quantos litros de esperma liberta uma baleia",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "25"
-      },
-      {
-        "id": 2,
-        "answer": "20"
-      },
-      {
-        "id": 3,
-        "answer": "70"
-      },
-      {
-        "id": 4,
-        "answer": "30"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[medium] Quantas vezes fomos ao rabo do Nabo",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "TRIIIIINTA!"
-      },
-      {
-        "id": 2,
-        "answer": "Zero"
-      },
-      {
-        "id": 3,
-        "answer": "Duas (por dia)"
-      },
-      {
-        "id": 4,
-        "answer": "DEZ"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  }
-]
+        {
+          "question": "A lingua de uma baleia azul pode pesar mais que um elefante?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Claro que sim!"
+            },
+            {
+              "id": 2,
+              "answer": "Nem pensar!"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "Qual o pais em que se faz mais sexo?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Grécia"
+            },
+            {
+              "id": 2,
+              "answer": "Portugal CLARO!"
+            },
+            {
+              "id": 3,
+              "answer": "Itália"
+            },
+            {
+              "id": 4,
+              "answer": "Brasil"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "Que animal se suicida quando fica bebado?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Escorpião"
+            },
+            {
+              "id": 2,
+              "answer": "Humanos"
+            },
+            {
+              "id": 3,
+              "answer": "Aranha"
+            },
+            {
+              "id": 4,
+              "answer": "Abelhas"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "Quem salta mais alto?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Pulga"
+            },
+            {
+              "id": 2,
+              "answer": "Cristiano Ronaldo - SIIIIIIII"
+            },
+            {
+              "id": 3,
+              "answer": "Canguru"
+            },
+            {
+              "id": 4,
+              "answer": "Sapo"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        }
+      ]
     },
     "hard": {
       "points": 30,
       "questions": [
-  {
-    "question": "[hard] Quanto tempo dura, em média, o orgasmo de um porco?",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "30min"
-      },
-      {
-        "id": 2,
-        "answer": "2min"
-      },
-      {
-        "id": 3,
-        "answer": "15min"
-      },
-      {
-        "id": 4,
-        "answer": "10min"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
+        {
+          "question": "Quanto tempo dura, em média, o orgasmo de um porco?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "30min"
+            },
+            {
+              "id": 2,
+              "answer": "2min"
+            },
+            {
+              "id": 3,
+              "answer": "15min"
+            },
+            {
+              "id": 4,
+              "answer": "10min"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "Como é que se inicia o ato sexual nos louva-deus?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "A fêmea arranca a cabeça ao macho"
+            },
+            {
+              "id": 2,
+              "answer": "É similar aos humanos"
+            },
+            {
+              "id": 3,
+              "answer": "Juntam os corpos e copulam por osmose"
+            },
+            {
+              "id": 4,
+              "answer": "Depois de uma discussão entre ambos"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "Quantos litros de esperma liberta uma baleia?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "25"
+            },
+            {
+              "id": 2,
+              "answer": "20"
+            },
+            {
+              "id": 3,
+              "answer": "70"
+            },
+            {
+              "id": 4,
+              "answer": "30"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        },
+        {
+          "question": "O orgasmo das mulheres dura quantas vezes mais que o dos homens?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "3"
+            },
+            {
+              "id": 2,
+              "answer": "1"
+            },
+            {
+              "id": 3,
+              "answer": "2"
+            },
+            {
+              "id": 4,
+              "answer": "Os dos homens duram mais!"
+            }
+          ],
+          "media": {
+            "type": "audio",
+            "source": ""
+          }
+        }
+      ]
     }
-  },
-  {
-    "question": "[hard] Como é que se inicia o ato sexual nos louva-deus?",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "A fêmea arranca a cabeça ao macho"
-      },
-      {
-        "id": 2,
-        "answer": "É similar aos humanos"
-      },
-      {
-        "id": 3,
-        "answer": "Juntam os corpos e copulam por osmose"
-      },
-      {
-        "id": 4,
-        "answer": "Depois de uma discussão entre ambos"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[hard] Quantos litros de esperma liberta uma baleia",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "25"
-      },
-      {
-        "id": 2,
-        "answer": "20"
-      },
-      {
-        "id": 3,
-        "answer": "70"
-      },
-      {
-        "id": 4,
-        "answer": "30"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  },
-  {
-    "question": "[hard] Quantas vezes fomos ao rabo do Nabo",
-    "answers":[
-      {
-        "id": 1,
-        "answer": "TRIIIIINTA!"
-      },
-      {
-        "id": 2,
-        "answer": "Zero"
-      },
-      {
-        "id": 3,
-        "answer": "Duas (por dia)"
-      },
-      {
-        "id": 4,
-        "answer": "DEZ"
-      }
-    ],
-    "media": {
-      "type": "audio",
-      "source": ""
-    }
-  }
-]
-      }
   }
 }
