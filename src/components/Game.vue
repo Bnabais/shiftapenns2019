@@ -12,9 +12,10 @@
         <div class="answers-wrapper col-xs-12">
           <div v-for="answer in actualQuestion.answers" class="answers col-md-6 col-xs-12">
             <button
-                v-on:click="handleAnswer(answer.id)"
-                class="btn btn-warning answer col-md-6"
-                type="submit">
+              v-on:click="handleAnswer(answer.id)"
+              v-bind:class="{ disabled: answer.disabled }"
+              class="btn btn-warning answer col-md-6"
+              type="submit">
               {{ answer.answer }}
             </button>
           </div>
@@ -60,26 +61,26 @@
     }
 
     handleAnswer(id: number): void {
-        if (this.gameService.isCorrectAnswer(id)) {
-          this.animationForCorrectAnswer();
-          this.timeOut = setTimeout(() => {
-            this.isToShowAnimation = false;
-            this.gif = '';
+      if (this.gameService.isCorrectAnswer(id)) {
+        this.animationForCorrectAnswer();
+        this.timeOut = setTimeout(() => {
+          this.isToShowAnimation = false;
+          this.gif = '';
 
-            if (this.gameService.hasMoreQuestions()) {
-              this.actualQuestion = this.gameService.getNextQuestion();
-            }
-          }, 3000);
-        } else {
+          if (this.gameService.hasMoreQuestions()) {
+            this.actualQuestion = this.gameService.getNextQuestion();
+          }
+        }, 3000);
+      } else {
         this.screenLevel = ScreenLevel.GAMEOVER_SCREEN;
       }
     }
 
     animationForCorrectAnswer(): void {
-        let audio = new Audio(require(`../assets/${this.actualQuestion.media.audio}`));
-        this.gif = this.actualQuestion.media.gif;
-        this.isToShowAnimation = true;
-        audio.play();
+      let audio = new Audio(require(`../assets/${this.actualQuestion.media.audio}`));
+      this.gif = this.actualQuestion.media.gif;
+      this.isToShowAnimation = true;
+      audio.play();
     }
 
     handleStartAgain(): void {
@@ -90,6 +91,10 @@
 
     getPlayersPoints(): number {
       return this.gameService.getPoints();
+    }
+
+    teste(): void {
+      this.gameService.disableRandomAnswer(this.actualQuestion);
     }
   }
 </script>
@@ -185,9 +190,11 @@
         white-space: normal;
 
         &:hover {
-          color: white;
-          background-color: blue;
-          border-color: white;
+          &:not(.disabled) {
+            color: white;
+            background-color: blue;
+            border-color: white;
+          }
         }
 
         @media (max-width: 992px) {

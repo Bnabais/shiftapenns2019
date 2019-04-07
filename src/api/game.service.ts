@@ -1,6 +1,7 @@
 import { GameModel, newGameModel } from '@/api/model/game.model';
 import { QuestionModel } from '@/api/model/question.model';
 import * as data from '../assets/jogo.json';
+import { AnswerModel } from '@/api/model/answer.model';
 
 export type LevelType =
   'easy'
@@ -9,12 +10,14 @@ export type LevelType =
 
 export class GameService {
   private game: GameModel;
-  private points: number;
+  private points: number = 0;
   private actualQuestionType: LevelType;
+  private disabledAnswerId: number = 2;
+  private technolas: number = 6;
 
   constructor() {
     this.game = newGameModel();
-    this.points = 0;
+    this.resetValues();
     this.actualQuestionType = 'easy';
     this.loadQuestionsFromJson();
   }
@@ -32,7 +35,7 @@ export class GameService {
   }
 
   public restartGame(): void {
-    this.points = 0;
+    this.resetValues();
     this.loadQuestionsFromJson();
   }
 
@@ -47,6 +50,18 @@ export class GameService {
     } else {
       return false;
     }
+  }
+
+  public disableRandomAnswer(actualQuestion: QuestionModel): QuestionModel {
+    actualQuestion.answers.map(
+      (answer: AnswerModel) => answer.disabled = answer.id === this.disabledAnswerId ? true : answer.disabled);
+    this.disabledAnswerId++;
+    this.technolas--;
+    return actualQuestion;
+  }
+
+  public getTecholas(): number {
+    return this.technolas > 0 ? this.technolas : 0;
   }
 
   private getRandomQuestionIndex(level: LevelType): number {
@@ -81,6 +96,12 @@ export class GameService {
       default:
         return 0;
     }
+  }
+
+  private resetValues(): void {
+    this.points = 0;
+    this.technolas = 6;
+    this.disabledAnswerId = 2;
   }
 
   private loadQuestionsFromJson(): void {

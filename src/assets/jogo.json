@@ -8,11 +8,13 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Vacas"
+              "answer": "Vacas",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Tubarões"
+              "answer": "Tubarões",
+              "disabled": false
             }
           ],
           "media": {
@@ -25,19 +27,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Verde"
+              "answer": "Verde",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Azul"
+              "answer": "Azul",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "Vermelha"
+              "answer": "Vermelha",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Branca"
+              "answer": "Branca",
+              "disabled": false
             }
           ],
           "media": {
@@ -50,19 +56,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Os porcos não conseguem olhar para cima"
+              "answer": "Os porcos não conseguem olhar para cima",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Céu"
+              "answer": "Céu",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "Ficam cegos com o sol"
+              "answer": "Ficam cegos com o sol",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Conseguem ver Marte"
+              "answer": "Conseguem ver Marte",
+              "disabled": false
             }
           ],
           "media": {
@@ -75,19 +85,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Chita"
+              "answer": "Chita",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Cavalo"
+              "answer": "Cavalo",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "William Carvalho"
+              "answer": "William Carvalho",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Cão"
+              "answer": "Cão",
+              "disabled": false
             }
           ],
           "media": {
@@ -105,11 +119,13 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Claro que sim!"
+              "answer": "Claro que sim!",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Nem pensar!"
+              "answer": "Nem pensar!",
+              "disabled": false
             }
           ],
           "media": {
@@ -122,19 +138,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Grécia"
+              "answer": "Grécia",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Portugal CLARO!"
+              "answer": "Portugal CLARO!",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "Itália"
+              "answer": "Itália",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Brasil"
+              "answer": "Brasil",
+              "disabled": false
             }
           ],
           "media": {
@@ -147,19 +167,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Escorpião"
+              "answer": "Escorpião",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Humanos"
+              "answer": "Humanos",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "Aranha"
+              "answer": "Aranha",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Abelhas"
+              "answer": "Abelhas",
+              "disabled": false
             }
           ],
           "media": {
@@ -172,19 +196,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "Pulga"
+              "answer": "Pulga",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "Cristiano Ronaldo - SIIIIIIII"
+              "answer": "Cristiano Ronaldo - SIIIIIIII",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "Canguru"
+              "answer": "Canguru",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Sapo"
+              "answer": "Sapo",
+              "disabled": false
             }
           ],
           "media": {
@@ -202,19 +230,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "30min"
+              "answer": "30min",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "2min"
+              "answer": "2min",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "15min"
+              "answer": "15min",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "10min"
+              "answer": "10min",
+              "disabled": false
             }
           ],
           "media": {
@@ -227,19 +259,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "A fêmea arranca a cabeça ao macho"
+              "answer": "A fêmea arranca a cabeça ao macho",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "É similar aos humanos"
+              "answer": "É similar aos humanos",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "Juntam os corpos e copulam por osmose"
+              "answer": "Juntam os corpos e copulam por osmose",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Depois de uma discussão entre ambos"
+              "answer": "Depois de uma discussão entre ambos",
+              "disabled": false
             }
           ],
           "media": {
@@ -252,19 +288,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "25"
+              "answer": "25",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "20"
+              "answer": "20",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "70"
+              "answer": "70",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "30"
+              "answer": "30",
+              "disabled": false
             }
           ],
           "media": {
@@ -277,19 +317,23 @@
           "answers": [
             {
               "id": 1,
-              "answer": "3"
+              "answer": "3",
+              "disabled": false
             },
             {
               "id": 2,
-              "answer": "1"
+              "answer": "1",
+              "disabled": false
             },
             {
               "id": 3,
-              "answer": "2"
+              "answer": "2",
+              "disabled": false
             },
             {
               "id": 4,
-              "answer": "Os dos homens duram mais!"
+              "answer": "Os dos homens duram mais!",
+              "disabled": false
             }
           ],
           "media": {
