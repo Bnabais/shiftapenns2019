@@ -21,9 +21,21 @@
           </div>
         </div>
       </div>
+        <div v-else-if="screenLevel === 'victoryScreen'" class="content col-md-12">
+            <div class="victory-div col-md-12">
+                <h1 class="text-uppercase victory-title">Congrats, you've won !</h1>
+                <img class="victory-gif" :src=victoryGif alt="victory_gif" />
+                <button v-on:click="handleStartAgain()" class="btn btn-warning start-again col-xs-6 col-xs-offset-3"
+                        type="submit">Start again!
+                </button>
+            </div>
+        </div>
       <div v-else-if="screenLevel === 'gameOverScreen'" class="content col-md-12">
         <div class="gameover-div col-md-12">
           <h1 class="text-uppercase gameover">{{ gameOver }}</h1>
+          <div v-if="isToShowAnimation === true" class="animation">
+              <img class="img-responsive gif" alt="Responsive image" :src=lostGif />
+          </div>
           <button v-on:click="handleStartAgain()" class="btn btn-warning start-again col-xs-6 col-xs-offset-3"
             type="submit">Start again!
           </button>
@@ -46,6 +58,8 @@
     screenLevel: ScreenLevel;
     gameOver: string = 'game over';
     gif: string = '';
+    victoryGif: string = 'https://media.giphy.com/media/5tujcZUWQosFUR2Sav/source.gif';
+    lostGif: string = 'https://media.giphy.com/media/YT6eehffdK5he/giphy.gif';
     isToShowAnimation: boolean = false;
     timeOut: any = undefined;
 
@@ -67,19 +81,37 @@
           this.isToShowAnimation = false;
           this.gif = '';
 
-          if (this.gameService.hasMoreQuestions()) {
-            this.actualQuestion = this.gameService.getNextQuestion();
-          }
-        }, 3000);
-      } else {
-        this.screenLevel = ScreenLevel.GAMEOVER_SCREEN;
-      }
+            if (this.gameService.hasMoreQuestions()) {
+              this.actualQuestion = this.gameService.getNextQuestion();
+            } else {
+                this.screenLevel = ScreenLevel.VICTORY_SCREEN;
+                this.animationForVictory();
+            }
+          }, 3000);
+        } else {
+            this.screenLevel = ScreenLevel.GAMEOVER_SCREEN;
+            this.animationForLost();
+            this.timeOut = setTimeout(() => {
+                this.isToShowAnimation = false;
+            }, 3000);
+        }
     }
 
     animationForCorrectAnswer(): void {
-      let audio = new Audio(require(`../assets/${this.actualQuestion.media.audio}`));
-      this.gif = this.actualQuestion.media.gif;
+        let audio = new Audio(require(`../assets/${this.actualQuestion.media.audio}`));
+        this.gif = this.actualQuestion.media.gif;
+        this.isToShowAnimation = true;
+        audio.play();
+    }
+
+    animationForLost(): void {
+      let audio = new Audio(require('../assets/no.mp3'));
       this.isToShowAnimation = true;
+      audio.play();
+    }
+
+    animationForVictory(): void {
+      let audio = new Audio(require('../assets/sii.mp3'));
       audio.play();
     }
 
@@ -131,8 +163,11 @@
     align-items: center;
 
     .gif {
-      padding-right: 50px;
-      width: 500px;
+      width: 700px;
+      height: auto;
+      max-height: 600px;
+      margin: 0 auto;
+      border-radius: 10rem;
     }
   }
 
@@ -203,6 +238,15 @@
           left: 0;
         }
       }
+    }
+
+    .victory-title {
+        color: white;
+    }
+
+    .victory-gif {
+        margin: 3rem 0;
+        border-radius: 20rem;
     }
 
   }
